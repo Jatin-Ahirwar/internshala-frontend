@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.sendmaildiv{
+    height: calc(100% - 20vh);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.forgetpasswordform{
+    margin-top: 50px;
+    height: 50vh;
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+.forgetpasswordform p{
+    color: gray;
+}
+.forgetpasswordform form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.forgetpasswordform form label{
+    font-size: 17px;
+}
+
+.forgetpasswordform form input{
+    padding: 5px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.311);
+}
+.forgetpasswordform form button{
+    background-color: #00A5EC;
+    padding:  5px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.forgetpasswordform form h6{
+    font-size: 14.5px;
+}
+.forgetpasswordform form h6 span{
+    color: #00A5EC;
+}

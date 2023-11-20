@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.authlandingpage{
+    height: calc(100% - 80px);
+    width: 100%;
+}
+.Link{
+    text-decoration: none;
+}
+.authenticate{
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 180px;
+}
+.authenticate img{
+    /* margin-left: 10vw; */
+    height: 70%;
+}
+.signinform{
+    height: 45vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.signinform h3{
+    margin-left: 16%;
+    /* margin-bottom: 30px; */
+}
+.signinform h6{
+    margin-left: 16%;
+    margin-bottom: 25px;
+}
+.signinform form label{
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.signinform form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+.signinform form input{
+    width: 25vw;
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.signinform form button{
+    margin-top: 8px;
+    width: 140px;
+    height: 40px;
+}
+#forgetpass{
+    color: #0D6EFD;
+    text-transform: capitalize;
+    margin-top: 10px;
+    /* color: #333333 ; */
+    /* color: rgb(98, 98, 98); */
+}
+
+
+.authorization{
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 140px;
+}
+.authorization img{
+    /* margin-left: 10vw; */
+    height: 50%;
+}
+
+
+.signupform{
+    height: 70vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* border: 1px solid black; */
+}
+
+.f1{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 50px;
+    margin-bottom: 10px;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signupform h3{
+    margin-left: 30%;
+    /* margin-bottom: 30px; */
+}
+.signupform h6{
+    margin-left: 30%;
+    margin-bottom: 15px;
+}
+.signupform form label{
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.signupform form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 8px; */
+}
+.signupform form input{
+    /* width: 25vw; */
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.signupform form button{
+    margin-top: 8px;
+    width: 140px;
+    height: 40px;
+}
+.signupform form select{
+    /* height: 40px; */
+    border-radius: 5px;
+    padding: 6px 4px;
+    outline: none;
+}
+.more{
+    margin-left: 3.5vw;
+    width: 28vw;
+    margin-bottom: 7px;
+}
+
+#btn{
+    margin-left: 3.5vw;
+    width: 28vw;
+}
+

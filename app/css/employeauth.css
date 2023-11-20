@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.employeauthlandingpage{
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+}
+.eleft{
+    height: 100%;
+    width: 50%;
+    background-color: rebeccapurple;
+}
+.eright{
+    height: 100%;
+    width: 50%;
+    background-color: red;
+}
+

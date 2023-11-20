@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.footer{
+    border-top: 1px solid black;
+    height: 30%;
+    width: 100%;
+    background-color: #333333;
+    /* background-color: rebeccapurple; */
+}
+.footertop{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    gap: 80px;
+}
+.footertags h6{
+    /* color: white; */
+    text-transform: capitalize;
+    font-weight: 400;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.628);
+    transition: all ease .5s;
+}
+.footertags h6:hover{
+    color: white;
+}
+
+.footerbottam{
+    height: 30%;
+    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    position: relative;
+}
+.footerbottam button i{
+    color: rgba(255, 255, 255, 0.628);
+    margin-right: 5px;
+    transition: all ease .5s;
+}
+
+.footerbottam button{
+    background-color: #333333;
+    color: rgba(255, 255, 255, 0.628);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.628);
+    padding: 0px 12px;
+    height: 50px;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+.footerbottam button:hover{
+    border: 1px solid white;
+    color: white;
+}
+.footerbottam button:hover .ri-google-play-fill{
+    color: white;
+}
+
+
+
+.footericons i{
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.628);
+    transition: all ease .5s;
+}
+.footericons i:hover{
+    color: white;
+}
+
+
+.footericons{
+    margin-left: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+    color: white;
+}
+
+.footerbottam p{
+    position: absolute;
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    color: rgba(255, 255, 255, 0.628);
+    transition: all ease .5s;
+}
+.footerbottam p:hover{
+    color: white;
+}
+

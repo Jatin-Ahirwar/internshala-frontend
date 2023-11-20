@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.otp{
+    height: calc(100% - 20vh);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.otpbox{
+    height: 50vh;
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+.otpbox form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.otpbox form label{
+    font-size: 17px;
+}
+
+.otpbox form input{
+    width: 18vw;
+    padding: 5px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.311);
+}
+.otpbox form button{
+    margin-top: 5px;
+    background-color: #00A5EC;
+    padding:  5px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+}
