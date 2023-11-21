@@ -38,7 +38,7 @@ html,body {
 
 .authlandingpagemid{
     height: calc(100% - 25vh);
-    background-color: #e1f7ff;
+    background-color: #effafe;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ html,body {
     align-items: center;
     justify-content: center;
 }
-.authlandingpagemidtop h5 span{
+.authlandingpagemidtop h6 span{
     color: #006BC2;
 }
 
@@ -65,7 +65,7 @@ html,body {
     white-space: nowrap;
 }
 .jobcard{
-    border-radius: 20px ;
+    border-radius: 15px ;
     height: 100%;
     width: 19vw;
     background-color: #FFFFFF;
@@ -152,5 +152,77 @@ html,body {
     text-decoration: none;
     color: black;
 }
+.authcoursesdiv{
+    height: calc(100% - 25vh);
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coursecard{
+    border-radius: 15px ;
+    height: 100%;
+    width: 18.5vw;
+    flex-shrink: 0; 
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border: .2px solid rgba(128, 128, 128, 0.283);
+}
+.coursetop{
+    height: 40%;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+}
+.coursetop img{
+    height: 100%;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+}
 
 
+.coursebottam{
+    padding: 18px 15px;
+    height: 60%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: rebeccapurple; */
+}
+.coursebottam .rating{
+    height: 16px;
+    width: 8vw;
+    display: flex;
+    gap: 8px;
+    color: gray;
+}
+.blueline{
+    height: 100%;
+    width: 1px;
+    background-color:#CAE7FF;
+}
+#moreee{
+    height: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    color: #038CDD;
+}
+
+#moreee p{
+    text-align: center;
+    font-weight: 500;
+}
+#week{
+    color: gray;
+}
+.ri-star-fill{
+    margin-right: 3px;
+    color: #FFAE00;
+}
