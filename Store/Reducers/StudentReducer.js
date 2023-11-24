@@ -5,7 +5,8 @@ const initialState = {
     jobs:null,
     internships:null,
     errors:[],
-    isAuthenticated:false
+    isAuthenticated:false,
+    singleinternship:null
 }
 
 export const StudentReducer = createSlice({

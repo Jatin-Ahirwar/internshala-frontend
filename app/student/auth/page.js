@@ -1,6 +1,7 @@
 "use client"
 import '@/app/css/auth.css'
 import Footer from '@/Components/home/Footer'
+import { asyncshowsingleinternships } from '@/Store/Actions/StudentActions'
 import { asyncapplyinternshipstudent, asyncapplyjobstudent } from '@/Store/Actions/StudentActions'
 import { addinternships } from '@/Store/Reducers/StudentReducer'
 import Link from 'next/link'
@@ -9,11 +10,18 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const page = () => {
+  const router = useRouter()
   const dispatch = useDispatch()
   const { student , jobs , internships } = useSelector((state)=>state.StudentReducer)
   const applyHandler = (id,e) => {
+    
     dispatch(asyncapplyinternshipstudent(id))
     dispatch(asyncapplyjobstudent(id))
+  }
+  const singleinternship = (id) => {
+    console.log(id)
+    // dispatch(asyncshowsingleinternships(id))
+
   }
   useEffect(()=>{
   },[student])
@@ -29,8 +37,9 @@ const page = () => {
               <h6>as per your <span>preferences</span></h6>
             </div>
               <div className='jobdiv'>
-                {internships && internships.map((i)=>(
-                  <Link id='Link'  href={"/singleinternship/" + i._id} key={i._id} className='jobcard'>
+                {internships &&  internships.map((i)=>(
+                  // <Link id='Link'  href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
+                  <Link id='Link' href={"/student/auth/singleinternship/" + i._id} onClick={() => singleinternship(i._id)} key={i._id} className='jobcard'>
 
                   {/* <div key={i._id} className='jobcard'> */}
                   <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>

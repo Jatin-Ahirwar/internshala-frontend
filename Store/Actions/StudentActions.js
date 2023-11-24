@@ -109,7 +109,8 @@ export const asyncshowinternships = () => async(dispatch,getstate) =>{
 // 
 export const asyncshowsingleinternships = (id) => async(dispatch,getstate) =>{
     try {
-        const { data } = await axios.post("/student/readsingle/internship/" + id  )
+        const { data } = await axios.post("/student/readsingleinternship/" + id  )
+        // console.log(data)
         dispatch(addinternships(data.internship))
         dispatch(asynccurrentstudent())
 
