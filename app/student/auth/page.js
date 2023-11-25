@@ -19,8 +19,7 @@ const page = () => {
     dispatch(asyncapplyjobstudent(id))
   }
   const singleinternship = (id) => {
-    console.log(id)
-    // dispatch(asyncshowsingleinternships(id))
+    dispatch(asyncshowsingleinternships(id))
 
   }
   useEffect(()=>{
@@ -39,9 +38,9 @@ const page = () => {
               <div className='jobdiv'>
                 {internships &&  internships.map((i)=>(
                   // <Link id='Link'  href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
-                  <Link id='Link' href={"/student/auth/singleinternship/" + i._id} onClick={() => singleinternship(i._id)} key={i._id} className='jobcard'>
+                  // <Link id='Link' href={"/student/auth/singleinternship/" + i._id} onClick={() => singleinternship(i._id)} key={i._id} className='jobcard'>
+                  <Link id='Link' href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
 
-                  {/* <div key={i._id} className='jobcard'> */}
                   <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
                   <div className='jobnamediv'>
                     <div className='jobname'>
