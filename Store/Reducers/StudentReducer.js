@@ -6,7 +6,7 @@ const initialState = {
     internships:null,
     errors:[],
     isAuthenticated:false,
-    singleinternships:null
+    internship:null
 }
 
 export const StudentReducer = createSlice({
@@ -23,11 +23,11 @@ export const StudentReducer = createSlice({
     addinternships: (state,action) =>{
     state.internships = action.payload
     },
-    addsingleinternships: (state,action) =>{
-    state.singleinternships = action.payload
+    addinternship: (state,action) =>{
+    state.internship = action.payload
     },
     removesingleinternships: (state,action) =>{
-    state.singleinternships = null
+    state.internship = null
     },
     removestudent: (state,action) =>{
     state.student = null
@@ -50,7 +50,7 @@ export const {
     removeerror , 
     addjobs , 
     addinternships , 
-    addsingleinternships ,
+    addinternship ,
     removesingleinternships 
 } = StudentReducer.actions
 

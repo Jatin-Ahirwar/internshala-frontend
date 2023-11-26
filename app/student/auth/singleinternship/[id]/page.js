@@ -38,19 +38,19 @@
 import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { asyncshowsingleinternships } from '@/Store/Actions/StudentActions';
+import Solointernship from '@/Components/student/SoloInternship';
 const page = (props) => {
-  const { singleinternships } = useSelector((state)=>state.StudentReducer)
+  const { internship } = useSelector((state)=>state.StudentReducer)
   const dispatch = useDispatch();
   const id = props.params.id;
-
+  
   useEffect(()=>{
     dispatch(asyncshowsingleinternships(id))
   },[])
 
   return (
     <>
-      <h1>apply</h1>
-        <p>{JSON.stringify(singleinternships)}</p>
+      <Solointernship/>
     </>
   )
 }
