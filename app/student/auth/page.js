@@ -56,7 +56,7 @@ const page = () => {
                     <p><i class="ri-map-pin-line"></i> {i && i.internshiptype}</p>
                     <p><i class="ri-money-cny-box-line"></i>₹ 3,00,000 - 6,00,000 / Year  </p>
                   </div>
-                  <Link className='link' href="">View details <i class="ri-arrow-right-s-line"></i></Link>
+                  <Link className='link' href={"/student/auth/singleinternship/" + i._id} >View details <i class="ri-arrow-right-s-line"></i></Link>
                   {/* </div>    */}
                   </Link>
 

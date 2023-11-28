@@ -141,8 +141,8 @@ export const asyncapplyjobstudent = (id) => async(dispatch,getstate) =>{
 export const asyncapplyinternshipstudent = (id) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/apply/internship/" + id  )
-        dispatch(asynccurrentstudent())
         dispatch(addinternships())
+        dispatch(asynccurrentstudent())
 
     } catch (error) {
         dispatch(iserror(error.response.data.message))

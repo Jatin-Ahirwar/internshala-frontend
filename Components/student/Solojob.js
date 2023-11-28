@@ -2,19 +2,12 @@
 import '@/app/css/Solointernship.css'
 
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Footer from '../home/Footer'
 import Link from 'next/link'
-import { asyncapplyinternshipstudent, asyncapplyjobstudent, asynccurrentstudent } from '@/Store/Actions/StudentActions'
 
 const Solointernship = () => {
-    const dispatch = useDispatch()
-    const applyHandler = (id,e) => {
-        dispatch(asyncapplyinternshipstudent(id))
-        dispatch(asynccurrentstudent())
-        // dispatch(asyncapplyjobstudent(id))
 
-    }
     const { student ,internship } = useSelector((state)=>state.StudentReducer)
   return <>
     <div className='solopage' >
@@ -184,7 +177,7 @@ const Solointernship = () => {
 
             <div style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
                 {!internship?.students.includes(student && student._id) ? (
-                    <button onClick={() => applyHandler(internship?._id)} className='applynow' href="">
+                    <button onClick={() => applyHandler(i._id)} className='applynow' href="">
                         Apply now
                     </button>     
                 ) : 
