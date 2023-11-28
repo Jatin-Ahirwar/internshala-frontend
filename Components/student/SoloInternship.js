@@ -4,12 +4,14 @@ import '@/app/css/Solointernship.css'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Footer from '../home/Footer'
+import Link from 'next/link'
 
 const Solointernship = () => {
+
     const { internship } = useSelector((state)=>state.StudentReducer)
   return <>
     <div className='solopage' >
-        <h2 style={{textTransform:"capitalize" , marginBottom:"40px"}}>Remote {internship?.profile} internship at {internship?.orgname}</h2>
+        <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {internship?.profile} internship in {internship?.location} at {internship?.orgname}</h2>
         <div className='information'>
             <div className='interntop' style={{display:"flex" , flexDirection:"column" }}>
             <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
@@ -96,8 +98,89 @@ const Solointernship = () => {
 
             </div> 
 
-            <div className='line'></div>
-               
+            <div className='aboutcompany'>
+                <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about {internship?.orgname}</h6>
+                <p>Lorem ipsum, dolor sit amet lore consectetur adipisicing elit. Accusantium delectus saepe amet suscipit quas repudiandae unde fugiat, ab voluptatem quasi qui aspernatur doloribus error obcaecati modi non officia. Sint hic assumenda obcaecati molestiae, eos quaerat tempora tenetur voluptates provident vero possimus harum culpa alias laborum natus placeat officia quae quidem!</p>
+            </div>
+
+            <div className='companystart'>
+                <h6>Activity on Internshala</h6>
+                <div style={{display:"flex" , gap:"20px"}}>
+                    <p><i class="ri-phone-find-line"></i> Hiring since January 2021</p>
+                    <p><i class="ri-mail-line"></i> 60 opportunities posted</p>
+                    <p><i class="ri-user-follow-line"></i> 27 candidates hired</p>
+                </div>
+            </div>
+
+
+            <div className='requirement'>
+                <div style={{lineHeight:'1'}}>
+                    <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about the internship</h6>
+                    <p>Selected intern's day-to-day responsibilities include:</p>
+                </div>
+                <div className='key'>
+                    <p>1. Work on the front-end development of various sites, apps, and device screens</p>
+                    <p>2. Work with UI/UX designers to convert design ideas into implemented apps/websites</p>
+                    <p>3. Collaborate with other developers and improve existing code</p>
+                </div>
+            </div>
+
+            <div  className='skill'>
+                <h5>Skill(s) required</h5>
+                <div className='skilldiv'>
+                    <div className='button'>Express.js</div>
+                    <div className='button'>Node.js</div>
+                    <div className='button'>React.js</div>
+                    <div className='button'>Next.js</div>
+                    <div className='button'>Mongodb</div>
+                    <div className='button'>AWS</div>
+                    <div className='button'>Socket.io</div>
+                    <div className='button'>JavaScript</div>
+                    {/* <div>React-Native</div> */}
+                    <div className='button'>TypeScript</div>
+                    <div className='button'>Socket.io</div>
+                    <div className='button'>CSS</div>
+                </div>
+            </div>
+
+            <div className='requirement'>
+                <div style={{lineHeight:'1'}}>
+                    <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>Who can apply</h6>
+                    <p>Only those candidates can apply who:</p>
+                </div>
+                <div className='key'>
+                    <p>1. are available for full time (in-office) internship</p>
+                    <p>2. can start the internship between {internship?.from} to {internship?.to}</p>
+                    <p>3. are available for duration of {internship?.duration}</p>
+                    <p>4. are from or open to relocate to {internship?.location}</p>
+                    <p>5. have relevant skills and interests</p>
+                </div>
+            </div>    
+            
+            <div className='skill'>
+                <h5>Perks</h5>
+                <div className='skilldiv'>
+                    <div className='button'>certificate</div>
+                    <div className='button'>Letter of recommendation</div>
+                    <div className='button'>Flexible work hours</div>
+                    <div className='button'>Informal dress code</div>
+                    <div className='button'>5 days a week</div>
+                    <div className='button'>AWS</div>
+                    <div className='button'>Free snacks & beverages</div>
+                </div>
+            </div>
+
+            <div style={{lineHeight:'1'}} className='requirement'>
+                    <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>Number of openings</h6>
+                    <p>{internship?.openings}</p>
+            </div>
+
+            <div style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
+                <Link className='applynow' href="">
+                    Apply now
+                </Link>                
+            </div>
+
             </div>
     </div>
     <Footer/>
