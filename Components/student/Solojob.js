@@ -1,26 +1,34 @@
 "use client"
 import '@/app/css/Solointernship.css'
-
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Footer from '../home/Footer'
 import Link from 'next/link'
+import { asyncapplyjobstudent } from '@/Store/Actions/StudentActions'
 
-const Solointernship = () => {
+const Solojob = () => {
+    const dispatch = useDispatch()
+    const { student , job , isAuthenticated   } = useSelector((state)=>state.StudentReducer)
+    const applyHandler = () => {
+        if(!isAuthenticated){
+            alert("please login to access the resource")
+            return
+        }
+        dispatch(asyncapplyjobstudent(job?._id));
+    }
 
-    const { student ,internship } = useSelector((state)=>state.StudentReducer)
-  return <>
+    return <>
     <div className='solopage' >
-        <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {internship?.profile} internship in {internship?.location} at {internship?.orgname}</h2>
+        <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {job?.profile} job in {job?.location} at {job?.orgname}</h2>
         <div className='information'>
             <div className='interntop' style={{display:"flex" , flexDirection:"column" }}>
             <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
-            <h6 style={{fontSize:"17px", marginTop:"5px"}}>{internship?.profile}</h6>
-            <h6 style={{fontSize:"15px", color:'gray'}}>{internship?.orgname}</h6>
+            <h6 style={{fontSize:"17px", marginTop:"5px"}}>{job?.profile}</h6>
+            <h6 style={{fontSize:"15px", color:'gray'}}>{job?.orgname}</h6>
             <h6 style={{fontSize:"15px", color:'gray',textTransform:"capitalize" , padding:"12px 0"}}>
                 <i style={{marginRight:"5px"}} class="ri-map-pin-line"></i>
-                {internship?.location}
-                {/* {internship && internship.location === "Remote" ? "Remote" : internship?.location} */}
+                {job?.location}
+                {/* {job && job.location === "Remote" ? "Remote" : job?.location} */}
             </h6>
             </div>
 
@@ -42,7 +50,7 @@ const Solointernship = () => {
                     <i class="ri-time-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>duration</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{internship?.duration}</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.duration}</h6>
 
                </div> 
 
@@ -65,7 +73,7 @@ const Solointernship = () => {
                     <i class="ri-hourglass-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>APPLY BY</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{internship?.lastdate}</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.lastdate}</h6>
 
                </div> 
 
@@ -87,8 +95,8 @@ const Solointernship = () => {
             <div className='appli'>
                 <button>
                     <i class="ri-group-line"></i>
-                    <p style={{marginRight:"5px"}}>{internship?.students.length}</p>
-                    {internship?.students.length === 1 ? <p>applicant</p> : <p>applicants</p>}    
+                    <p style={{marginRight:"5px"}}>{job?.students.length}</p>
+                    {job?.students.length === 1 ? <p>applicant</p> : <p>applicants</p>}    
                 </button>
 
                 <div className='save'>
@@ -99,7 +107,7 @@ const Solointernship = () => {
             </div> 
 
             <div className='aboutcompany'>
-                <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about {internship?.orgname}</h6>
+                <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about {job?.orgname}</h6>
                 <p>Lorem ipsum, dolor sit amet lore consectetur adipisicing elit. Accusantium delectus saepe amet suscipit quas repudiandae unde fugiat, ab voluptatem quasi qui aspernatur doloribus error obcaecati modi non officia. Sint hic assumenda obcaecati molestiae, eos quaerat tempora tenetur voluptates provident vero possimus harum culpa alias laborum natus placeat officia quae quidem!</p>
             </div>
 
@@ -115,7 +123,7 @@ const Solointernship = () => {
 
             <div className='requirement'>
                 <div style={{lineHeight:'1'}}>
-                    <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about the internship</h6>
+                    <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>about the job</h6>
                     <p>Selected intern's day-to-day responsibilities include:</p>
                 </div>
                 <div className='key'>
@@ -149,10 +157,10 @@ const Solointernship = () => {
                     <p>Only those candidates can apply who:</p>
                 </div>
                 <div className='key'>
-                    <p>1. are available for full time (in-office) internship</p>
-                    <p>2. can start the internship between {internship?.from} to {internship?.to}</p>
-                    <p>3. are available for duration of {internship?.duration}</p>
-                    <p>4. are from or open to relocate to {internship?.location}</p>
+                    <p>1. are available for full time (in-office) job</p>
+                    <p>2. can start the job between {job?.from} to {job?.to}</p>
+                    <p>3. are available for duration of {job?.duration}</p>
+                    <p>4. are from or open to relocate to {job?.location}</p>
                     <p>5. have relevant skills and interests</p>
                 </div>
             </div>    
@@ -172,12 +180,12 @@ const Solointernship = () => {
 
             <div style={{lineHeight:'1'}} className='requirement'>
                     <h6 style={{textTransform:"capitalize", fontSize:"18px"}}>Number of openings</h6>
-                    <p>{internship?.openings}</p>
+                    <p>{job?.openings}</p>
             </div>
 
             <div style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
-                {!internship?.students.includes(student && student._id) ? (
-                    <button onClick={() => applyHandler(i._id)} className='applynow' href="">
+                {job && !job?.students.includes(student && student._id) ? (
+                    <button onClick={applyHandler} className='applynow' href="">
                         Apply now
                     </button>     
                 ) : 
@@ -193,4 +201,4 @@ const Solointernship = () => {
     </>
 }
 
-export default Solointernship
+export default Solojob

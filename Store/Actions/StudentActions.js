@@ -1,5 +1,5 @@
 import axios from "@/utils/axios";
-import { addstudent,removestudent,addjobs,addinternships,iserror,removeerror ,addsingleinternships, addinternship } from "../Reducers/StudentReducer";
+import { addjob, addstudent,removestudent,addjobs,addinternships,iserror,removeerror ,addsingleinternships, addinternship } from "../Reducers/StudentReducer";
 
 export const asynccurrentstudent = () => async(dispatch,getstate) =>{
     try {
@@ -125,13 +125,24 @@ export const asyncshowjobs = () => async(dispatch,getstate) =>{
 }
 
 
+export const asyncshowsinglejob = (id) => async(dispatch,getstate) =>{
+    try {
+        const { data } = await axios.post("/student/readsinglejob/" + id  )
+        // console.log(data)
+        dispatch(addjob(data.job))
+
+    } catch (error) {
+        dispatch(iserror(error.response.data.message))
+    }
+}
+
 
 
 export const asyncapplyjobstudent = (id) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/apply/job/" + id  )
         dispatch(asynccurrentstudent())
-        dispatch(addjobs())
+        dispatch(asyncshowjobs())
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }
@@ -142,7 +153,7 @@ export const asyncapplyinternshipstudent  = (id) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/apply/internship/" + id  )
         dispatch(asynccurrentstudent())
-        // dispatch(asyncshowinternships())
+        dispatch(asyncshowinternships())
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }

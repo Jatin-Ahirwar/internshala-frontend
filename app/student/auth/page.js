@@ -183,13 +183,13 @@ const page = () => {
             </div>
               <div className='jobdiv'>
                 {jobs && jobs.map((j)=>(
-                  <Link id='Link'  href={"/singlejob/" + j._id} key={j._id} className='jobcard'>
+                  <Link id='Link'  href={"/student/auth/singlejob/" + j._id} key={j._id} className='jobcard'>
 
                   {/* <div key={i._id} className='jobcard'> */}
                   <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
                   <div className='jobnamediv'>
                     <div className='jobname'>
-                      <h6>{j && j.skill}</h6>
+                      <h6>{j && j.profile}</h6>
                       <p>{j && j.orgname}</p>
                     </div>
                     <div className='jobimagediv'>
@@ -198,10 +198,10 @@ const page = () => {
                   </div>
                   <div className='line'></div>
                   <div className='jobmoneydiv'>
-                    <p><i class="ri-map-pin-line"></i> {j && j.internshiptype}</p>
+                    <p><i class="ri-map-pin-line"></i> {j && j.location}</p>
                     <p><i class="ri-money-cny-box-line"></i>₹ 3,00,000 - 6,00,000 / Year  </p>
                   </div>
-                  <Link className='link' href="">View details <i class="ri-arrow-right-s-line"></i></Link>
+                  <Link className='link' href={"/student/auth/singlejob/" + j._id} >View details <i class="ri-arrow-right-s-line"></i></Link>
                   {/* </div>    */}
                   </Link>
 
