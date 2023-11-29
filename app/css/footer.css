@@ -39,6 +39,7 @@ html,body {
     width: 100%;
     padding: 0 100px;
     display: flex;
+    align-items: center;
     position: relative;
 }
 .footerbottam button i{

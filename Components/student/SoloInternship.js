@@ -9,14 +9,16 @@ import { asyncapplyinternshipstudent, asyncapplyjobstudent, asynccurrentstudent 
 
 const Solointernship = () => {
     const dispatch = useDispatch()
-    const applyHandler = (id,e) => {
-        dispatch(asyncapplyinternshipstudent(id))
-        dispatch(asynccurrentstudent())
-        // dispatch(asyncapplyjobstudent(id))
-
+    const { student ,isAuthenticated , internship , internships } = useSelector((state)=>state.StudentReducer)
+    const applyHandler = () => {
+        if(!isAuthenticated){
+            alert("please login to access the resource")
+            return
+        }
+        dispatch(asyncapplyinternshipstudent(internship?._id));
     }
-    const { student ,internship } = useSelector((state)=>state.StudentReducer)
-  return <>
+
+    return <>
     <div className='solopage' >
         <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {internship?.profile} internship in {internship?.location} at {internship?.orgname}</h2>
         <div className='information'>
@@ -182,19 +184,21 @@ const Solointernship = () => {
                     <p>{internship?.openings}</p>
             </div>
 
-            <div style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
-                {!internship?.students.includes(student && student._id) ? (
-                    <button onClick={() => applyHandler(internship?._id)} className='applynow' href="">
+            <div  style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
+            
+                {internship && !internship.students.includes(student?._id) ? (
+                    <button id='apply' onClick={applyHandler} className='applynow' >
                         Apply now
                     </button>     
-                ) : 
-                    <button style={{width:"150px" , backgroundColor:"#b5b5b5cb" , color:"black" , cursor: "not-allowed" }} className='applynow' href="">
+                ) : (
+                    <button id='applied' style={{ width:"150px" , backgroundColor:"#b5b5b5cb" , color:"black" , cursor: "not-allowed" }} className='applynow' href="">
                         Already applied
-                    </button> 
-                }
-       
+                    </button>
+                )}
+
             </div>
-            </div>
+
+        </div>
     </div>
     <Footer/>
     </>

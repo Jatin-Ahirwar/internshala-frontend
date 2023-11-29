@@ -211,7 +211,7 @@ const page = () => {
               </div>
         </div>        
         
-        {/* <div>Available jobs and internships for <strong>{student && student.firstname}</strong></div>
+         {/* <div>Available jobs and internships for <strong>{student && student.firstname}</strong></div>
         <ul className='container'>
               {internships && internships.map((i)=>(
                 <div className='' key={i._id}>{JSON.stringify(i)} <br />
@@ -221,8 +221,10 @@ const page = () => {
                   ) : <h3>Already Applied</h3>}
                 </div>
               ))}
-              {student && student.internships.map((i)=>(<p key={i._id}>{JSON.stringify(i)}</p>))}
+              {student && student.internships?.map((i)=>(<p key={i._id}>{JSON.stringify(i)}</p>))}
         </ul> */}
+
+
     <Footer />
 
     </div>
