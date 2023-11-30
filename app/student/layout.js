@@ -40,8 +40,8 @@ const StudentLayout = ({children}) => {
             <Link className='Link' href="/">
               <img src="https://internshala.com//static/images/internshala_og_image.jpg" alt="" />
             </Link>
-            <Link className='Link' href="">Internships <i class="ri-arrow-down-s-fill"></i></Link>            
-            <Link className='Link' href="">Jobs <i class="ri-arrow-down-s-fill"></i></Link>            
+            <Link className='Link' href="/student/auth/internships">Internships <i class="ri-arrow-down-s-fill"></i></Link>            
+            <Link className='Link' href="/student/auth/jobs">Jobs <i class="ri-arrow-down-s-fill"></i></Link>            
             <Link className='Link' href="">Courses <span>OFFER</span> <i class="ri-arrow-down-s-fill"></i></Link>            
         </div>
         <div className='mainnavright'>

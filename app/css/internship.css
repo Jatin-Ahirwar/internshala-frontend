@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+}
+.internshiphome{
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8F8;
+}
+.internshiphometop{
+    height: 25vh;
+    width: 62%;
+    padding: 25px 0;
+    position: relative;
+}
+.contentarea{
+    height: 100%;
+    width: 62%;
+    display: flex;
+    justify-content: space-between;
+}
+.contentarealeft{
+    min-height: 100%;
+    width: 39%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+.contentarearight{
+    min-height: 100%;
+    width: 58%;
+    background-color: #FFFFFF;
+}
