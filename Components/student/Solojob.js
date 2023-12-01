@@ -22,7 +22,7 @@ const Solojob = () => {
         <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {job?.profile} job in {job?.location} at {job?.orgname}</h2>
         <div className='information'>
             <div className='interntop' style={{display:"flex" , flexDirection:"column" }}>
-            <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
+            <div className='buttonn'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
             <h6 style={{fontSize:"17px", marginTop:"5px"}}>{job?.profile}</h6>
             <h6 style={{fontSize:"15px", color:'gray'}}>{job?.orgname}</h6>
             <h6 style={{fontSize:"15px", color:'gray',textTransform:"capitalize" , padding:"12px 0"}}>
@@ -88,7 +88,7 @@ const Solojob = () => {
                     Posted few hours ago
                     </div>
 
-                    <div className='intern'>Internship</div>
+                    <div style={{padding:"0 10px"}} className='intern'>Job</div>
             </div>
 
 

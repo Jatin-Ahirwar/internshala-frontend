@@ -42,27 +42,29 @@ html,body {
     align-items: center;
     position: relative;
 }
-.footerbottam button i{
+.footerbottam .btnnnnnn  i{
     color: rgba(255, 255, 255, 0.628);
     margin-right: 5px;
     transition: all ease .5s;
 }
 
-.footerbottam button{
+.footerbottam .btnnnnnn {
     background-color: #333333;
     color: rgba(255, 255, 255, 0.628);
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.628);
-    padding: 0px 12px;
+    padding: 0 12px;
     height: 50px;
     border-radius: 5px;
     transition: all ease .5s;
+    display: flex;
+    align-items: center;
 }
-.footerbottam button:hover{
+.footerbottam .btnnnnnn:hover{
     border: 1px solid white;
     color: white;
 }
-.footerbottam button:hover .ri-google-play-fill{
+.footerbottam .btnnnnnn:hover .ri-google-play-fill{
     color: white;
 }
 

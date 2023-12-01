@@ -32,10 +32,10 @@ const Internships = () => {
                 <h5><i style={{color:"#00A5EC"}} class="ri-filter-line"></i> Filters</h5>
                    <div className='filtersdiv'>
                       <label style={{padding:"5px" , fontSize:"17px"}} >Profile</label>
-                      <input style={{marginBottom:"10px",marginLeft:"0", width:"100%" ,padding:"7px 8px", borderRadius:"4px", border:".5px solid rgba(128, 128, 128, 0.429)" , outline:"none"}} className='more' type="text" name='email' placeholder='e.g. Marketing' />
+                      <input style={{marginBottom:"10px",marginLeft:"0", width:"100%" ,padding:"7px 10px", borderRadius:"4px", border:".5px solid rgba(128, 128, 128, 0.429)" , outline:"none"}} className='more' type="text" name='email' placeholder='e.g. Marketing' />
                       {/* <input onChange={(e)=>setemail(e.target.value)} className='more'  required type="text" name='email' placeholder='Email address' /> */}
                       <label style={{padding:"5px" , fontSize:"17px"}} >Location</label>
-                      <input style={{marginBottom:"10px",marginLeft:"0", width:"100%" ,padding:"7px 8px", borderRadius:"4px", border:".5px solid rgba(128, 128, 128, 0.429)" , outline:"none"}} className='more' type="text" name='email' placeholder='e.g. Delhi' />
+                      <input style={{marginBottom:"10px",marginLeft:"0", width:"100%" ,padding:"7px  10px", borderRadius:"4px", border:".5px solid rgba(128, 128, 128, 0.429)" , outline:"none"}} className='more' type="text" name='email' placeholder='e.g. Delhi' />
                       {/* <input onChange={(e)=>setemail(e.target.value)} className='more'  required type="text" name='email' placeholder='Email address' /> */}
                       <div style={{display:"flex", alignItems:"center",gap:"5px", padding :"5px 0"}}>
                         <input  type="checkbox" /> <label style={{fontSize:"15px", marginTop:"-.5px"}} > Work From Home</label>
@@ -43,15 +43,18 @@ const Internships = () => {
                       <div style={{display:"flex", alignItems:"center",gap:"5px", padding :"5px 0"}}>
                         <input  type="checkbox" /> <label style={{fontSize:"15px", marginTop:"-.5px"}} > Part Time</label>
                       </div>
+                      <h4 style={{textAlign:"center", marginTop:"15px"}}>Keyword Search</h4>  
+                      <input style={{marginBottom:"10px",marginLeft:"0", width:"100%" ,padding:"7px 10px", borderRadius:"4px", border:".5px solid rgba(128, 128, 128, 0.429)" , outline:"none"}} className='more' type="text" name='all' placeholder='e.g. Design,Mumbai,Infosys' />
+                       <p style={{cursor:"pointer",color:"#006BC2", textAlign:"right"}}>Clear all</p> 
                     </div>
             </div>
             <div className='contentarearight'>
                 {internships && internships?.map((internship)=>(
-                    <Link href={"/student/auth/singleinternship/" + internship._id} className='internshipcard'>
+                    <div href="" key={internship._id} className='internshipcard'>
                         <div className='bttn'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
                         <h5>{internship.profile}</h5>
-                        <h6>{internship.orgname}</h6>
-                        <p>{internship.location}</p>
+                        <h6 style={{textTransform:"capitalize"}}>{internship.orgname}</h6>
+                        <p style={{textTransform:"capitalize"}}>{internship.location}</p>
                         
                         <div style={{display:"flex",height : "50px" , width : "100%" , gap:"30px"}}>
                
@@ -98,9 +101,9 @@ const Internships = () => {
                 </div>
 
                 <div className='lastline'>
-                    <Link style={{color:"#006BC2"}} className='link' href={"/student/auth/singleinternship/" + internship._id} >View details </Link>
+                    <Link style={{color:"#006BC2",textDecoration:"none"}} className='link' href={"/student/auth/singleinternship/" + internship._id} >View details </Link>
                     { !internship?.students.includes(student?._id) ? (
-                    <button id='apply' onClick={()=>{applyHandler(internship._id)}} className='applynow' >
+                    <button id='apply' style={{height:"80%",width:"100px", fontSize:"14px" }} onClick={()=>{applyHandler(internship._id)}} className='applynow' >
                         Apply now
                     </button>     
                     ) : (
@@ -115,7 +118,7 @@ const Internships = () => {
 
 
 
-                    </Link>
+                    </div>
 
                 ))}
             </div>

@@ -41,7 +41,7 @@ const page = () => {
                   // <Link id='Link' href={"/student/auth/singleinternship/" + i._id} onClick={() => singleinternship(i._id)} key={i._id} className='jobcard'>
                   <Link id='Link' href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
 
-                  <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
+                  <div className='activitybtn'><i class="ri-funds-box-line"></i> Actively hiering</div>
                   <div className='jobnamediv'>
                     <div className='jobname'>
                       <h6>{i && i.profile}</h6>
@@ -186,7 +186,7 @@ const page = () => {
                   <Link id='Link'  href={"/student/auth/singlejob/" + j._id} key={j._id} className='jobcard'>
 
                   {/* <div key={i._id} className='jobcard'> */}
-                  <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
+                  <div className='activitybtn'><i class="ri-funds-box-line"></i> Actively hiering</div>
                   <div className='jobnamediv'>
                     <div className='jobname'>
                       <h6>{j && j.profile}</h6>

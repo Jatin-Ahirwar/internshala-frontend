@@ -115,9 +115,23 @@ export const asyncshowsingleinternships = (id) => async(dispatch,getstate) =>{
     }
 }
 
+export const asyncapplyinternshipstudent  = (id) => async(dispatch,getstate) =>{
+    try {
+        const { data } = await axios.post("/student/apply/internship/" + id  )
+        dispatch(asynccurrentstudent())
+        dispatch(asyncshowinternships())
+    } catch (error) {
+        dispatch(iserror(error.response.data.message))
+    }
+}
+
+
+
+
 export const asyncshowjobs = () => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/read/jobs/"  )
+        // console.log(data)
         dispatch(addjobs(data.jobs))
     } catch (error) {
         dispatch(iserror(error.response.data.message))
@@ -128,32 +142,17 @@ export const asyncshowjobs = () => async(dispatch,getstate) =>{
 export const asyncshowsinglejob = (id) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/readsinglejob/" + id  )
-        // console.log(data)
         dispatch(addjob(data.job))
-
+        
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }
 }
-
-
-
 export const asyncapplyjobstudent = (id) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/apply/job/" + id  )
         dispatch(asynccurrentstudent())
         dispatch(asyncshowjobs())
-    } catch (error) {
-        dispatch(iserror(error.response.data.message))
-    }
-}
-
-
-export const asyncapplyinternshipstudent  = (id) => async(dispatch,getstate) =>{
-    try {
-        const { data } = await axios.post("/student/apply/internship/" + id  )
-        dispatch(asynccurrentstudent())
-        dispatch(asyncshowinternships())
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }

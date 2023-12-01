@@ -23,7 +23,7 @@ const Solointernship = () => {
         <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {internship?.profile} internship in {internship?.location} at {internship?.orgname}</h2>
         <div className='information'>
             <div className='interntop' style={{display:"flex" , flexDirection:"column" }}>
-            <div className='button'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
+            <div className='buttonn'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
             <h6 style={{fontSize:"17px", marginTop:"5px"}}>{internship?.profile}</h6>
             <h6 style={{fontSize:"15px", color:'gray'}}>{internship?.orgname}</h6>
             <h6 style={{fontSize:"15px", color:'gray',textTransform:"capitalize" , padding:"12px 0"}}>

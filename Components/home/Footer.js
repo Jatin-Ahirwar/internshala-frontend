@@ -26,7 +26,7 @@ const Footer = () => {
             </div> 
         </div>
         <div className='footerbottam'>
-            <button><i class="ri-google-play-fill"></i> Get Android App</button>
+            <button className='btnnnnnn'><i class="ri-google-play-fill"></i> Get Android App</button>
             <div className='footericons'>
             <i class="ri-instagram-line"></i>
             <i class="ri-twitter-x-line"></i>

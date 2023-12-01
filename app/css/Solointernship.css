@@ -29,22 +29,20 @@ html,body {
     /* background-color: rebeccapurple; */
 }
 
-.button p{
-    font-size: 12px;
+.buttonn p{
+    font-size: 15px;
 }
 
-.button i{
+.buttonn i{
     color: #006BC2;
 }
-
-.button{
+.buttonn{
     padding: 2px 0;
     border-radius: 5px;
-    height: 25px;
-    width: 100px;
+    height: 30px;
+    width: 150px;
     outline: none;
     background-color: transparent;
-    width: 110px;
     border: .5px solid rgba(0, 0, 0, 0.329);
     display: flex;
     justify-content: center;

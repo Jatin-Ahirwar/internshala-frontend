@@ -78,25 +78,24 @@ html,body {
 .jobdiv::-webkit-scrollbar{
     display: none;
 }
-.jobcard .button p{
-    font-size: 12px;
-}
 
-.jobcard .button i{
+.jobcard .activitybtn i{
     color: #006BC2;
 }
 
-.jobcard .button{
-    padding: 2px 0;
+.jobcard .activitybtn{
     border-radius: 5px;
-    height: 25px;
-    width: 100px;
     outline: none;
     background-color: transparent;
-    width: 110px;
     border: .5px solid rgba(0, 0, 0, 0.329);
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 140px;
+    gap: 5px;
+    padding: 2px 0;
+    font-size: 15px;
 }
 .jobnamediv{
     height: 20%;
