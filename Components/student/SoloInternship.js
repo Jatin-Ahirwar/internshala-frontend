@@ -10,12 +10,12 @@ import { asyncapplyinternshipstudent, asyncapplyjobstudent, asynccurrentstudent 
 const Solointernship = () => {
     const dispatch = useDispatch()
     const { student ,isAuthenticated , internship , internships } = useSelector((state)=>state.StudentReducer)
-    const applyHandler = () => {
+    const applyHandler = (id) => {
         if(!isAuthenticated){
             alert("please login to access the resource")
             return
         }
-        dispatch(asyncapplyinternshipstudent(internship?._id));
+        dispatch(asyncapplyinternshipstudent(id));
     }
 
     return <>
@@ -187,11 +187,11 @@ const Solointernship = () => {
             <div  style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
             
                 { !internship?.students.includes(student?._id) ? (
-                    <button id='apply' onClick={applyHandler} className='applynow' >
+                    <button id='apply' onClick={()=>{applyHandler(internship && internship._id)}} className='applynow' >
                         Apply now
                     </button>     
                 ) : (
-                    <button id='applied' style={{ width:"150px" , backgroundColor:"#b5b5b5cb" , color:"black" , cursor: "not-allowed" }} className='applynow' href="">
+                    <button id='applied' style={{ width:"150px" , backgroundColor:"rgba(128, 128, 128, 0.228)" , color:"black" , cursor: "not-allowed" }} className='applynow' href="">
                         Already applied
                     </button>
                 )}
