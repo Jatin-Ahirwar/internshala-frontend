@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '@/app/css/internship.css'
 import { useDispatch, useSelector } from 'react-redux'
 import Footer from '../home/Footer'
@@ -16,7 +16,7 @@ const Internships = () => {
         }
         dispatch(asyncapplyinternshipstudent(id));
     }
-
+        
     return <>
     <div className='internshiphome'>
         <div className='internshiphometop'>
@@ -50,7 +50,7 @@ const Internships = () => {
             </div>
             <div className='contentarearight'>
                 {internships && internships?.map((internship)=>(
-                    <div href="" key={internship._id} className='internshipcard'>
+                    <div href=""   key={internship._id} className='internshipcard'>
                         <div className='bttn'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
                         <h5>{internship.profile}</h5>
                         <h6 style={{textTransform:"capitalize"}}>{internship.orgname}</h6>
