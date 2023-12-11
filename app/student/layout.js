@@ -38,23 +38,29 @@ const StudentLayout = ({children}) => {
             <div className="circle">
             <span className='emailtag'>{student?.firstname.charAt(0)}</span>
                 <div className="hidden-nav">
-                    <h6>{student?.email}</h6>
-                    <a href="#">Item 2</a>
-                    <a href="#">Item 3</a>
+                    <div className='hiddentop'>
+                        <h6 style={{textTransform:"capitalize"}}>{student?.firstname} {student?.lastname}</h6>
+                        <p>{student?.email}</p>
+                    </div>
+                    <div className='linnee'>
+                      <Link className='Link' id='hiddenlinks' href={isAuthenticated ? "/student/auth" : "/student"}>Home</Link>
+                      <Link className='Link' id='hiddenlinks' href="">My Applications</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Edit Resume</Link>
+                      <Link className='Link' id='hiddenlinks' href="/student/auth/profile">Edit Profile</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Change Password</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Delete My Account</Link>
+                      <Link onClick={signoutHandler} className='Link' id='hiddenlinks' href="">Logout</Link>
+                    </div>
                 </div>
               </div>
               <i id='downn' class="ri-arrow-down-s-fill"></i>
           </div>
-          {/* <Link id='login' className='Link' href={isAuthenticated ? "/student/auth" : "/student"}>Home</Link>
-          <Link id='register' className='Link' href="/student/auth/profile">profile</Link>
-          <Link id='login' onClick={signoutHandler} className='Link' href="">Logout</Link> */}
           </>  
           :
           <>
-          <Link id='login' className='Link' href="/student/signin">Login</Link>
-          <Link id='register' className='Link' href="/student/signup">Register</Link>
-          <div className='line'></div>
-          <Link id='employe' className='Link' href="/employe">Hire Talent</Link>
+          <Link id='login' className='Link' href="/student">Student</Link>
+          <Link id='register' className='Link' href="/employe">Employe</Link>
+          {/* <div className='line'></div> */}
           </>
           }
         </div>

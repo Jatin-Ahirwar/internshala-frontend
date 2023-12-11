@@ -6,8 +6,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 const StudentLayout = ({children}) => {
     const dispatch = useDispatch()
-    // const { isAuthenticated }= useSelector((state) => state.StudentReducer)
-    const { isAuthenticated } = useSelector((state)=> state.EmployeReducer)
+    const { isAuthenticated,employe } = useSelector((state)=> state.EmployeReducer)
     // console.log(isAuthenticated)
     const router = useRouter()
     useEffect(() => {
@@ -21,52 +20,48 @@ const StudentLayout = ({children}) => {
     }
 
   return <>
-{/*     
-    <nav className='d-flex justify-content-between'>
-    <p><Link href={isAuthenticated ? "/student/auth" : "/student"}>Home</Link></p>
-        {isAuthenticated ?
-        <>
-            <p><Link  href="/student/auth/profile">Profile</Link></p>            
-            <p><Link onClick={signoutHandler} href="">Signout</Link></p>            
-        </>
-         :
-        <>
-            <p><Link href="/student/signup">Signup</Link></p>
-            <p><Link href="/student/signin">Signin</Link></p>
-        </>
-        }
-    </nav> */}
+
     <div className='mainnav'>
         <div className='mainnavleft'>
             <Link className='Link' href="/">
               <img src="https://internshala.com//static/images/internshala_og_image.jpg" alt="" />
             </Link>
-            <Link className='Link' href="">Internships <i class="ri-arrow-down-s-fill"></i></Link>            
-            <Link className='Link' href="">Jobs <i class="ri-arrow-down-s-fill"></i></Link>            
-            <Link className='Link' href="">Courses <span>OFFER</span> <i class="ri-arrow-down-s-fill"></i></Link>            
         </div>
         <div className='mainnavright'>
-          <Link className='Link' href="">
-            <div className='search'> 
-            <i class="ri-search-line"></i>
-            <h6>Search</h6>
-            </div>
-          </Link>
+          <Link className='Link' href="">Internships <i class="ri-arrow-down-s-fill"></i></Link>            
+          <Link className='Link' href="">Jobs <i class="ri-arrow-down-s-fill"></i></Link>            
+          <Link className='Link' href="">Courses <span>OFFER</span> <i class="ri-arrow-down-s-fill"></i></Link>            
           {isAuthenticated ? 
           <>
-          <Link id='login' className='Link' href={isAuthenticated ? "/employe/auth" : "/employe"}>Home</Link>
-          <Link id='register' className='Link' href="/employe/auth/profile">profile</Link>
-          <Link id='login' onClick={signoutHandler} className='Link' href="">Logout</Link>
+          <Link className='bookmark' href=""><i class="ri-bookmark-line"></i></Link>
+          <Link className='bookmark' href=""><i class="ri-message-2-line"></i></Link>
+          <div className='profilediv'>
+            <div className="circle">
+            <span className='emailtag'>{employe?.firstname.charAt(0)}</span>
+                <div className="hidden-nav">
+                    <div className='hiddentop'>
+                        <h6 style={{textTransform:"capitalize"}}>{employe?.firstname} {employe?.lastname}</h6>
+                        <p>{employe?.email}</p>
+                    </div>
+                    <div className='linnee'>
+                      <Link className='Link' id='hiddenlinks' href={isAuthenticated ? "/employe/auth" : "/employe"}>Home</Link>
+                      <Link className='Link' id='hiddenlinks' href="">My Applications</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Edit Resume</Link>
+                      <Link className='Link' id='hiddenlinks' href="/employe/auth/profile">Edit Profile</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Change Password</Link>
+                      <Link className='Link' id='hiddenlinks' href="">Delete My Account</Link>
+                      <Link onClick={signoutHandler} className='Link' id='hiddenlinks' href="">Logout</Link>
+                    </div>
+                </div>
+              </div>
+              <i id='downn' class="ri-arrow-down-s-fill"></i>
+          </div>
           </>  
           :
           <>
-          {/* <Link id='login' className='Link' href="/student/signin">Login</Link> */}
-          {/* <Link id='register' className='Link' href="/student/signup">Register</Link> */}
-          <Link id='register' className='Link' href="/student">Student</Link>
-          <div className='line'></div>
-          <Link id='employe' className='Link' href="/employe/signin">Sign In</Link>
-          <Link id='register' className='Link' href="/employe/signup">Sign Up</Link>
-
+          <Link id='login' className='Link' href="/student">Student</Link>
+          <Link id='register' className='Link' href="/employe">Employe</Link>
+          {/* <div className='line'></div> */}
           </>
           }
         </div>
