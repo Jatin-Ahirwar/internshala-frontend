@@ -23,7 +23,7 @@ const StudentLayout = ({children}) => {
 
     <div className='mainnav'>
         <div className='mainnavleft'>
-            <Link className='Link' href="/">
+            <Link className='Link' href={isAuthenticated ? "/employe/auth" : "/"}>
               <img src="https://internshala.com//static/images/internshala_og_image.jpg" alt="" />
             </Link>
         </div>
@@ -45,7 +45,7 @@ const StudentLayout = ({children}) => {
                     </div>
                     <div className='linnee'>
                       <Link className='Link' id='hiddenlinks' href={isAuthenticated ? "/employe/auth" : "/employe"}>Home</Link>
-                      <Link className='Link' id='hiddenlinks' href="">My Applications</Link>
+                      <Link className='Link' id='hiddenlinks' href="/employe/auth/myapplications">My Applications</Link>
                       <Link className='Link' id='hiddenlinks' href="">Edit Resume</Link>
                       <Link className='Link' id='hiddenlinks' href="/employe/auth/profile">Edit Profile</Link>
                       <Link className='Link' id='hiddenlinks' href="">Change Password</Link>
