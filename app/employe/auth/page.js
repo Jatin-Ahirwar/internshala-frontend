@@ -14,10 +14,7 @@ const page = () => {
   },[employe])
   return <>
     <div className='employeauthlandingpage'>
-        <div className='eleft'>
-          
-        </div>
-        <div className='eright'></div>
+        
     </div>
   <Footer />
   </>

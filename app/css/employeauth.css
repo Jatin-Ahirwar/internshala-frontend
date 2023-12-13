@@ -12,14 +12,4 @@ html,body {
     width: 100%;
     display: flex;
 }
-.eleft{
-    height: 100%;
-    width: 50%;
-    background-color: rebeccapurple;
-}
-.eright{
-    height: 100%;
-    width: 50%;
-    background-color: red;
-}
 

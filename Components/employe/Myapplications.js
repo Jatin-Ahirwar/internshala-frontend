@@ -45,7 +45,7 @@ const Myapplications = () => {
                 <div className="mydatadivnav">
                     <div className="appliedcompany">company</div>
                     <div className="profilerole">profile</div>
-                    <div className="applieddate">applied on</div>
+                    <div className="applieddate">created on</div>
                     <div className="applicants">number of applicants</div>
                     <div className="application">application status</div>
                     <div className="review">Review application</div>
