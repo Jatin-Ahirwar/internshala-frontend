@@ -23,6 +23,7 @@ const signin = () => {
     const student = {
       email,password
     }
+    // alert("invalid user")
     dispatch(asyncinstudent(student))
   }
   useEffect(() => {

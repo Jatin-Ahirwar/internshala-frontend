@@ -1,5 +1,6 @@
 "use client"
 import '@/app/css/employeauth.css'
+import Authpage from '@/Components/employe/Authpage'
 import Footer from '@/Components/home/Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -13,10 +14,7 @@ const page = () => {
   useEffect(()=>{
   },[employe])
   return <>
-    <div className='employeauthlandingpage'>
-        
-    </div>
-  <Footer />
+    <Authpage />
   </>
 }
 

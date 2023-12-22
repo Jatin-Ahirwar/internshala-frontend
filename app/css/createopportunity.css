@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.createopportunity{
+    min-height: 200vh;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.creatediv{
+    min-height: 100vh;
+    width: 40vw;
+    padding: 20px;
+    border-radius: 5px;
+    border: .5px solid rgba(128, 128, 128, 0.281);
+
+}
+
+.opitemdiv{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.opitemdiv input{
+    outline: none;
+    border: .5px solid rgba(128, 128, 128, 0.281);
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  user-select: none;
+}
+
+.checkboxLabel:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000; /* You can customize the border color */
+  border-radius: 50%;
+  background-color: #fff; /* You can customize the background color */
+}
+
+input:checked + .checkboxLabel:before {
+  background-color: #00f; /* You can customize the background color when checked */
+}

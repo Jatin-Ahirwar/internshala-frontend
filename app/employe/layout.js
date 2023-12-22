@@ -27,13 +27,13 @@ const StudentLayout = ({children}) => {
               <img src="https://internshala.com//static/images/internshala_og_image.jpg" alt="" />
             </Link>
         </div>
-        <div className='mainnavright'>
-          <Link className='Link' href="">Internships <i class="ri-arrow-down-s-fill"></i></Link>            
-          <Link className='Link' href="">Jobs <i class="ri-arrow-down-s-fill"></i></Link>            
-          <Link className='Link' href="">Courses <span>OFFER</span> <i class="ri-arrow-down-s-fill"></i></Link>            
+        <div style={{width:"fit-content" , gap:"20px"}} className='mainnavright'>
           {isAuthenticated ? 
           <>
-          <Link className='bookmark' href=""><i class="ri-bookmark-line"></i></Link>
+          <Link className='Link' href="">Plans and Pricing </Link>            
+          <Link className='Link' href="">Dashboard</Link>            
+          <Link className='Link' href="">Post Internship/job</Link>            
+
           <Link className='bookmark' href=""><i class="ri-message-2-line"></i></Link>
           <div className='profilediv'>
             <div className="circle">

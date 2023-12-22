@@ -45,8 +45,8 @@ const signup = () => {
     }
   },[isAuthenticated]) 
   return <>
-    <div className='authorization'>
-      <img style={{height: "50vh"}} src="https://img.freepik.com/premium-vector/business-team-brainstorm-idea-lightbulb-working-team-collaboration-colleagues-mutual-assistance_566886-3325.jpg?w=2000" alt="" />
+    <div  className='authorization'>
+      <img style={{height: "50vh",marginTop:"15vh"}} src="https://img.freepik.com/premium-vector/business-team-brainstorm-idea-lightbulb-working-team-collaboration-colleagues-mutual-assistance_566886-3325.jpg?w=2000" alt="" />
       <div className='signupform'>
         <h3>Employe SignUp</h3>
         <h6>Signup to access resources</h6>
@@ -102,9 +102,10 @@ const signup = () => {
           <button id='btn'  className='btn btn-primary'  required type='submit'>Signup</button>
         
         </form>
-      <h6>Already have an account ? <Link href="/employe/signin">Login Account</Link></h6>
+      <h6 style={{marginTop:"10px"}}>Already have an account ? <Link href="/employe/signin">Login Account</Link></h6>
       </div>    
     </div>
+    <div style={{height:"17vh"}}></div>
     <Footer />
 
 
