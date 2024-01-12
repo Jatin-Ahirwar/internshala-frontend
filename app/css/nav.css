@@ -105,6 +105,15 @@ Link{
     /* transition: opacity 0.3s, visibility 0.3s; */
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.178);
 }
+.profilediv:hover .hidden-nav {
+    opacity: 1;
+    visibility: visible;
+}
+.hidden-nav:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
 #hiddenlinks{
     padding: 15px 0;
 }
@@ -126,16 +135,6 @@ Link{
     color: #00A5EC;
 }
 
-.profilediv:hover .hidden-nav {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-.hidden-nav:hover {
-    opacity: 1;
-    visibility: visible;
-}
 
 .hidden-nav a {
     display: block;

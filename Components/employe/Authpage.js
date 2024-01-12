@@ -20,7 +20,7 @@ const Authpage = () => {
     return <>
     <div className='employeauthlandingpage'>
         <div className='empauthcenter'>
-            <h2>Post Internship/Job</h2>
+            <h2 style={{marginBottom:"20px"}}>Post Internship/Job</h2>
             <div className='authbox'>
                 <h5>Opportunity type</h5>
                 <div className='links'>

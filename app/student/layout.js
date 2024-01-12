@@ -60,7 +60,6 @@ const StudentLayout = ({children}) => {
           <>
           <Link id='login' className='Link' href="/student">Student</Link>
           <Link id='register' className='Link' href="/employe">Employe</Link>
-          {/* <div className='line'></div> */}
           </>
           }
         </div>
