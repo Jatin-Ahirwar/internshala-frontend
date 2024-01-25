@@ -10,9 +10,8 @@ const signin = () => {
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
   const dispatch = useDispatch()
-  const { isAuthenticated }= useSelector((state) => state.StudentReducer)
-  const router = useRouter
-  ()
+  const { isAuthenticated } = useSelector((state) => state.StudentReducer)
+  const router = useRouter()
 
   // const submitHandler = (e)=>{
   //   e.preventDefault()

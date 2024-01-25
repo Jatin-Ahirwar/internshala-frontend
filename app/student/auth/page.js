@@ -20,7 +20,6 @@ const page = () => {
   }
   const singleinternship = (id) => {
     dispatch(asyncshowsingleinternships(id))
-
   }
   useEffect(()=>{
   },[student])
