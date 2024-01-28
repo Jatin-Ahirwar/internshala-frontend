@@ -24,7 +24,7 @@ export const asyncsignupstudent = (student) => async(dispatch,getstate) =>{
 export const asyncinstudent = (student) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/student/signin" , student)
-        asynccurrentstudent()      
+        dispatch(asynccurrentstudent())      
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }

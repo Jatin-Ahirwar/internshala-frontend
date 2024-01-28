@@ -6,7 +6,7 @@ export const asynccurrentemploye = () => async(dispatch,getstate) =>{
         const { data } = await axios.post("/employe/employe")
         dispatch(addemploye(data))
         // console.log("employe",data.employe)
-        // console.log(data)
+        console.log(data)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }
@@ -16,7 +16,7 @@ export const asynccurrentemploye = () => async(dispatch,getstate) =>{
 export const asyncsignupemploye = (employe) => async(dispatch,getstate) =>{
         try {
             const { data } = await axios.post("/employe/signup", employe )
-            asynccurrentemploye()      
+            dispatch(asynccurrentemploye())      
         } catch (error) {
             dispatch(iserror(error.response.data.message))
         }
@@ -26,7 +26,7 @@ export const asyncsignupemploye = (employe) => async(dispatch,getstate) =>{
 export const asyncinemploye = (employe) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/employe/signin" , employe)
-        asynccurrentemploye()      
+        dispatch(asynccurrentemploye())      
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }

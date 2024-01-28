@@ -39,7 +39,7 @@ export const StudentReducer = createSlice({
     state.errors = []
     },
     iserror: (state,action) =>{
-        state.errors.push(action.payload)
+    state.errors.push(action.payload)
     },  
     removeerror: (state,action) =>{
         state.errors = []
