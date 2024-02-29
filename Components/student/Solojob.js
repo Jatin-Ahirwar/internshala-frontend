@@ -136,18 +136,11 @@ const Solojob = () => {
             <div  className='skill'>
                 <h5>Skill(s) required</h5>
                 <div className='skilldiv'>
-                    <div className='button'>Express.js</div>
-                    <div className='button'>Node.js</div>
-                    <div className='button'>React.js</div>
-                    <div className='button'>Next.js</div>
-                    <div className='button'>Mongodb</div>
-                    <div className='button'>AWS</div>
-                    <div className='button'>Socket.io</div>
-                    <div className='button'>JavaScript</div>
-                    {/* <div>React-Native</div> */}
-                    <div className='button'>TypeScript</div>
-                    <div className='button'>Socket.io</div>
-                    <div className='button'>CSS</div>
+                    {
+                        job?.skill.map((skill)=>(
+                            <div className='button'>{skill}</div>
+                        ))
+                    }
                 </div>
             </div>
 

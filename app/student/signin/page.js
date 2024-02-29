@@ -38,19 +38,15 @@ const signin = () => {
         <h6>Signin to access resources</h6>
         <form onSubmit={signinHandler} >
           <label>email</label>
-          <input onChange={(e)=> setemail(e.target.value)}  type="text" name='email' placeholder='user123@gmail.com' />
+          <input onChange={(e)=> setemail(e.target.value)}  required type="text" name='email' placeholder='user123@gmail.com' />
           <label>password</label>
-          <input onChange={(e)=> setpassword(e.target.value)} type="text" name='password' placeholder='**********' />
+          <input onChange={(e)=> setpassword(e.target.value)} required type="password" name='password' placeholder='**********' />
           <button className='btn btn-primary' type='submit'>SignIn</button>
         </form>
         <Link id='forgetpass' className='Link' href="/student/forget">forget password ?</Link>
       </div>    
     </div>
     <Footer />
-    {/* <div className='container mt-5'>
-      <button onClick={signinHandler} className='btn btn-primary '>signin</button>
-      <Link href="/student/forget">forget password?</Link>
-    </div> */}
     </>
 }
 

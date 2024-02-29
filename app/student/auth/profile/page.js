@@ -40,7 +40,6 @@ const profile = () => {
         const formdata = new FormData(e.target);
         formdata.set("avatar", e.target.avatar.files[0]);
         dispatch(asyncstudentavatar(formdata));
-        // console.log(e.target.avatar.files[0])
     }
     const ResetPasswordHandler = async(e)=>{
       e.preventDefault()
@@ -51,13 +50,6 @@ const profile = () => {
         console.log(pwd)
         await dispatch(asyncresetpassword(pwd))
         setpassword("")
-        // setconfirmpassword("")
-        toast.success("password reset success");
-        console.log("password successfully changed")
-      // }
-      // else{
-      //   alert("password failed to change")
-      // }
     }
     const UpdateHandler = (e)=>{
       e.preventDefault()

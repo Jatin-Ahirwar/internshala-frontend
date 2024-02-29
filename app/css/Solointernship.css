@@ -140,11 +140,11 @@ button{
     display: flex;
     flex-direction: column;
 }
-.skilldiv{
+/* .skilldiv{
+    background-color: rebeccapurple;
     display: flex;
     gap: 10px;
     width: 100%;
-    min-height: 10vh;
     flex-wrap: wrap;
 }
 
@@ -160,8 +160,28 @@ button{
     text-transform: capitalize;
     outline: none;
     border: none;
-    
+} */
+.skilldiv {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
 }
+
+.button {
+    background-color: #F8F8F8;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: fit-content;
+    border-radius: 20px;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+}
+
 .applynow{
     text-decoration: none;
     color: white;

@@ -14,6 +14,7 @@ export const StudentReducer = createSlice({
     name: 'student',
     initialState,
     reducers: {
+
     addstudent: (state,action) =>{
     state.student = action.payload
     state.isAuthenticated = true

@@ -1,12 +1,11 @@
 import axios from "@/utils/axios";
 import { addemploye,removeemploye,addjobs,addinternships,iserror,removeerror } from "../Reducers/EmployeReducer";
+import { toast } from "react-toastify";
 
 export const asynccurrentemploye = () => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/employe/employe")
         dispatch(addemploye(data))
-        // console.log("employe",data.employe)
-        console.log(data)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
     }
@@ -16,9 +15,11 @@ export const asynccurrentemploye = () => async(dispatch,getstate) =>{
 export const asyncsignupemploye = (employe) => async(dispatch,getstate) =>{
         try {
             const { data } = await axios.post("/employe/signup", employe )
-            dispatch(asynccurrentemploye())      
+            dispatch(asynccurrentemploye())
+            toast.success("Employe Account Created Successfully.")      
         } catch (error) {
             dispatch(iserror(error.response.data.message))
+            toast.error(error.response.data.message)
         }
 }
 
@@ -29,6 +30,7 @@ export const asyncinemploye = (employe) => async(dispatch,getstate) =>{
         dispatch(asynccurrentemploye())      
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
     }
 }
 
@@ -38,8 +40,10 @@ export const asyncsignoutemploye = (employe) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.get("/employe/signout" , employe)
         dispatch(removeemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
     }
 }
 
@@ -48,8 +52,11 @@ export const asyncemployeupdate = (employe) => async(dispatch,getstate) =>{
         const { _id } = await getstate().EmployeReducer.employe
         const { data } = await axios.post("/employe/update/" + _id , employe)
         dispatch(asynccurrentemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
 
@@ -60,8 +67,11 @@ export const asyncemployeavatar = (avatar) => async(dispatch,getstate) =>{
         const { _id } = await getstate().EmployeReducer.employe
         const { data } = await axios.post(`/employe/avatar/${_id}` , avatar)
         dispatch(asynccurrentemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
 
@@ -83,8 +93,10 @@ export const asyncresetpassword = (password) => async(dispatch,getstate) =>{
         const { _id } = await getstate().employeReducer.employe
         const { data } = await axios.post("/employe/reset-password/" + _id , password)
         dispatch(asynccurrentemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
     }
 }
 
@@ -92,8 +104,11 @@ export const asyncforgetpassword = (email) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/employe/send-mail" ,  email)
         dispatch(asynccurrentemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
 
@@ -103,14 +118,13 @@ export const asyncotpemployepassword = (newpass) => async(dispatch,getstate) =>{
     try {
         const { data } = await axios.post("/employe/forget-link" ,  newpass)
         dispatch(asynccurrentemploye())
+        toast.success(data.message)
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
-
-
-
-
 
 export const asyncshowinternships = () => async(dispatch,getstate) =>{
     try {
@@ -120,18 +134,7 @@ export const asyncshowinternships = () => async(dispatch,getstate) =>{
 
     } catch (error) {
         dispatch(iserror(error.response.data.message))
-    }
-}
-
-// 
-export const asyncshowsingleinternships = (id) => async(dispatch,getstate) =>{
-    try {
-        const { data } = await axios.post("/employe/readsingle/internship/" + id  )
-        dispatch(addinternships(data.internship))
-        dispatch(asynccurrentemploye())
-
-    } catch (error) {
-        dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
     }
 }
 
@@ -141,30 +144,23 @@ export const asyncshowjobs = () => async(dispatch,getstate) =>{
         dispatch(addjobs(data.jobs))
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
 
-
-
-
-export const asyncapplyjobemploye = (id) => async(dispatch,getstate) =>{
+export const asyncshowsingleinternships = (id) => async(dispatch,getstate) =>{
     try {
-        const { data } = await axios.post("/employe/apply/job/" + id  )
+        const { data } = await axios.post("/employe/readsingle/internship/" + id  )
+        dispatch(addinternships(data.internship))
         dispatch(asynccurrentemploye())
-        dispatch(addjobs())
-    } catch (error) {
-        dispatch(iserror(error.response.data.message))
-    }
-}
-
-
-export const asyncapplyinternshipemploye = (id) => async(dispatch,getstate) =>{
-    try {
-        const { data } = await axios.post("/employe/apply/internship/" + id  )
-        dispatch(asynccurrentemploye())
-        dispatch(addinternships())
 
     } catch (error) {
         dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
     }
 }
+
+
+

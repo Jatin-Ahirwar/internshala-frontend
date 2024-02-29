@@ -186,7 +186,7 @@ const Solointernship = () => {
             <div  style={{height:"40px", width:"100%"  , display:"flex" , justifyContent:"center"}}>
             
                 { !internship?.students.includes(student?._id) ? (
-                    <button id='apply' onClick={()=>{applyHandler(internship && internship._id)}} className='applynow' >
+                    <button id='apply' onClick={()=>{applyHandler(internship?._id)}} className='applynow' >
                         Apply now
                     </button>     
                 ) : (
