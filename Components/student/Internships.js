@@ -48,6 +48,7 @@ const Internships = () => {
                        <p style={{cursor:"pointer",color:"#006BC2", textAlign:"right"}}>Clear all</p> 
                     </div>
             </div>
+
             <div className='contentarearight'>
                 {internships && internships?.map((internship)=>(
                     <div href="" key={internship._id} className='internshipcard'>
@@ -63,7 +64,7 @@ const Internships = () => {
                     <i class="ri-play-circle-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Start Date</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>Immediately</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{internship.from}</h6>
                </div> 
 
 
@@ -85,7 +86,7 @@ const Internships = () => {
                     <i class="ri-money-dollar-box-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>STIPEND</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}> 16,000 /month</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>₹ {internship.stipend} / month</h6>
 
                </div> 
 

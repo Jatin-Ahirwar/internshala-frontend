@@ -36,8 +36,6 @@ const page = () => {
             </div>
               <div className='jobdiv'>
                 {internships &&  internships.map((i)=>(
-                  // <Link id='Link'  href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
-                  // <Link id='Link' href={"/student/auth/singleinternship/" + i._id} onClick={() => singleinternship(i._id)} key={i._id} className='jobcard'>
                   <Link id='Link' href={"/student/auth/singleinternship/" + i._id} key={i._id} className='jobcard'>
 
                   <div className='activitybtn'><i class="ri-funds-box-line"></i> Actively hiering</div>
@@ -53,7 +51,7 @@ const page = () => {
                   <div className='line'></div>
                   <div className='jobmoneydiv'>
                     <p><i class="ri-map-pin-line"></i> {i && i.internshiptype}</p>
-                    <p><i class="ri-money-cny-box-line"></i>₹ 3,00,000 - 6,00,000 / Year  </p>
+                    <p><i class="ri-money-cny-box-line"></i> ₹ {i && i.stipend}/ month</p>
                   </div>
                   <Link className='link' href={"/student/auth/singleinternship/" + i._id} >View details <i class="ri-arrow-right-s-line"></i></Link>
                   {/* </div>    */}
@@ -188,7 +186,7 @@ const page = () => {
                   <div className='activitybtn'><i class="ri-funds-box-line"></i> Actively hiering</div>
                   <div className='jobnamediv'>
                     <div className='jobname'>
-                      <h6>{j && j.profile}</h6>
+                      <h6>{j && j.title}</h6>
                       <p>{j && j.orgname}</p>
                     </div>
                     <div className='jobimagediv'>
@@ -198,7 +196,7 @@ const page = () => {
                   <div className='line'></div>
                   <div className='jobmoneydiv'>
                     <p><i class="ri-map-pin-line"></i> {j && j.location}</p>
-                    <p><i class="ri-money-cny-box-line"></i>₹ 3,00,000 - 6,00,000 / Year  </p>
+                    <p><i class="ri-money-cny-box-line"></i> ₹ {j?.salary} / Year  </p>
                   </div>
                   <Link className='link' href={"/student/auth/singlejob/" + j._id} >View details <i class="ri-arrow-right-s-line"></i></Link>
                   {/* </div>    */}

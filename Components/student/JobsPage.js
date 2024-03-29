@@ -63,7 +63,7 @@ const JobsPage = () => {
                     <i class="ri-play-circle-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Start Date</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>Immediately</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.start}</h6>
                </div> 
 
 
@@ -71,9 +71,9 @@ const JobsPage = () => {
                <div  style={{  height: "100%", width:"150px",  }}>
                <div style={{ color:"gray", display:"flex",gap:"7px", textAlign:"center"}}>
                     <i class="ri-time-line"></i>
-                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>duration</p>
+                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Experience</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.duration}</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.experience} years</h6>
 
                </div> 
 
@@ -83,9 +83,9 @@ const JobsPage = () => {
                <div  style={{  height: "100%", width:"150px"  }}>
                <div style={{  color:"gray", display:"flex",gap:"7px", textAlign:"center"}}>
                     <i class="ri-money-dollar-box-line"></i>
-                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>STIPEND</p>
+                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>salary (CTC)</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}> 16,000 /month</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>₹ {job?.salary}/ year</h6>
 
                </div> 
 
@@ -95,7 +95,7 @@ const JobsPage = () => {
                <div className='ting' style={{display:"flex" , gap :"20px" , height:"8vh" , borderBottom:".5px solid rgba(0, 0, 0, 0.11)" }}>
                     <div className='timee'>
                     <i style={{marginRight:"5px"}} class="ri-history-line"></i>
-                    Posted few hours ago
+                        Posted few hours ago
                     </div>
                     <div style={{padding:"0 10px"}} className='intern'>Job</div>
                 </div>
@@ -118,7 +118,7 @@ const JobsPage = () => {
 
 
 
-                    </Link>
+                </Link>
 
                 ))}
             </div>

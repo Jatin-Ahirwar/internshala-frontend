@@ -19,11 +19,11 @@ const Solojob = () => {
 
     return <>
     <div className='solopage' >
-        <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>Remote {job?.profile} job in {job?.location} at {job?.orgname}</h2>
+        <h2 style={{ width:"65%",textTransform:"capitalize" , marginBottom:"40px",textAlign:"center"}}>{job?.title} job in {job?.location} at {job?.orgname} ({job?.jobtype})</h2>
         <div className='information'>
             <div className='interntop' style={{display:"flex" , flexDirection:"column" }}>
             <div className='buttonn'><p><i class="ri-funds-box-line"></i> Actively hiering</p></div>
-            <h6 style={{fontSize:"17px", marginTop:"5px"}}>{job?.profile}</h6>
+            <h6 style={{fontSize:"17px", marginTop:"5px"}}>{job?.title}</h6>
             <h6 style={{fontSize:"15px", color:'gray'}}>{job?.orgname}</h6>
             <h6 style={{fontSize:"15px", color:'gray',textTransform:"capitalize" , padding:"12px 0"}}>
                 <i style={{marginRight:"5px"}} class="ri-map-pin-line"></i>
@@ -40,7 +40,7 @@ const Solojob = () => {
                     <i class="ri-play-circle-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Start Date</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>Immediately</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.start}</h6>
                </div> 
 
 
@@ -48,9 +48,9 @@ const Solojob = () => {
                <div  style={{  height: "100%", width:"150px",  }}>
                <div style={{ color:"gray", display:"flex",gap:"7px", textAlign:"center"}}>
                     <i class="ri-time-line"></i>
-                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>duration</p>
+                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Experience</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.duration}</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{job?.experience} years</h6>
 
                </div> 
 
@@ -60,9 +60,9 @@ const Solojob = () => {
                <div  style={{  height: "100%", width:"150px"  }}>
                <div style={{  color:"gray", display:"flex",gap:"7px", textAlign:"center"}}>
                     <i class="ri-money-dollar-box-line"></i>
-                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>STIPEND</p>
+                    <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Salary (ctc)</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}> 16,000 /month</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>₹ {job?.salary} / year</h6>
 
                </div> 
 
@@ -137,8 +137,8 @@ const Solojob = () => {
                 <h5>Skill(s) required</h5>
                 <div className='skilldiv'>
                     {
-                        job?.skill.map((skill)=>(
-                            <div className='button'>{skill}</div>
+                        job?.skill.map((skill,index)=>(
+                            <div className='button' key={index}>{skill}</div>
                         ))
                     }
                 </div>
@@ -151,8 +151,7 @@ const Solojob = () => {
                 </div>
                 <div className='key'>
                     <p>1. are available for full time (in-office) job</p>
-                    <p>2. can start the job between {job?.from} to {job?.to}</p>
-                    <p>3. are available for duration of {job?.duration}</p>
+                    <p>2. can start the job {job?.start}</p>
                     <p>4. are from or open to relocate to {job?.location}</p>
                     <p>5. have relevant skills and interests</p>
                 </div>

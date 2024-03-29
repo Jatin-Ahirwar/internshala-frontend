@@ -162,5 +162,33 @@ export const asyncshowsingleinternships = (id) => async(dispatch,getstate) =>{
     }
 }
 
+export const asyncCreateInternship = (internship) => async(dispatch,getstate) =>{
+    try {
+        const { data } = await axios.post("/employe/internship/create" , internship  )
+        dispatch(asynccurrentemploye())
+        toast.success("Internship Created Successfully")
+
+
+    } catch (error) {
+        dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
+    }
+}
+
+export const asyncCreatejob = (job) => async(dispatch,getstate) =>{
+    try {
+        const { data } = await axios.post("/employe/job/create" , job  )
+        dispatch(asynccurrentemploye())
+        toast.success("Job Created Successfully")
+    } catch (error) {
+        dispatch(iserror(error.response.data.message))
+        toast.error(error.response.data.message)
+
+    }
+}
+
+
+
 
 

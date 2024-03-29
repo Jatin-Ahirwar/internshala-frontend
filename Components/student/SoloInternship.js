@@ -35,12 +35,12 @@ const Solointernship = () => {
 
             <div style={{display:"flex",height : "50px" , width : "100%" , gap:"30px"}}>
                
-               <div  style={{  height: "100%", width:"150px"  }}>
+               <div  style={{  height: "100%", width:"150px" }}>
                <div style={{ color:"gray", display:"flex",gap:"7px", textAlign:"center"}}>
                     <i class="ri-play-circle-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>Start Date</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>Immediately</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>{internship?.from}</h6>
                </div> 
 
 
@@ -62,7 +62,7 @@ const Solointernship = () => {
                     <i class="ri-money-dollar-box-line"></i>
                     <p style={{ textTransform:"uppercase", fontSize:"13px" , letterSpacing:".5px"}}>STIPEND</p>
                </div>
-               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}> 16,000 /month</h6>
+               <h6 style={{ fontWeight:"400",marginTop:"-10px",display:"flex",gap:"7px",textTransform:"capitalize"}}>₹ {internship?.stipend} / month</h6>
 
                </div> 
 
@@ -136,18 +136,9 @@ const Solointernship = () => {
             <div  className='skill'>
                 <h5>Skill(s) required</h5>
                 <div className='skilldiv'>
-                    <div className='button'>Express.js</div>
-                    <div className='button'>Node.js</div>
-                    <div className='button'>React.js</div>
-                    <div className='button'>Next.js</div>
-                    <div className='button'>Mongodb</div>
-                    <div className='button'>AWS</div>
-                    <div className='button'>Socket.io</div>
-                    <div className='button'>JavaScript</div>
-                    {/* <div>React-Native</div> */}
-                    <div className='button'>TypeScript</div>
-                    <div className='button'>Socket.io</div>
-                    <div className='button'>CSS</div>
+                    {internship?.skill.map((s,index)=>(
+                        <div className='button' key={index}>{s}</div>
+                    ))}
                 </div>
             </div>
 
@@ -157,11 +148,11 @@ const Solointernship = () => {
                     <p>Only those candidates can apply who:</p>
                 </div>
                 <div className='key'>
-                    <p>1. are available for full time (in-office) internship</p>
-                    <p>2. can start the internship between {internship?.from} to {internship?.to}</p>
-                    <p>3. are available for duration of {internship?.duration}</p>
-                    <p>4. are from or open to relocate to {internship?.location}</p>
-                    <p>5. have relevant skills and interests</p>
+                    <p>1. are available for full time (in-office) internship.</p>
+                    <p>2. can start the internship between {internship?.from} to {internship?.to}.</p>
+                    <p>3. are available for duration of {internship?.duration} months.</p>
+                    <p>4. are from or open to relocate to {internship?.location}.</p>
+                    <p>5. have relevant skills and interests.</p>
                 </div>
             </div>    
             
