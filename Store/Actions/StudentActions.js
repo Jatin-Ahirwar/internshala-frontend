@@ -2,14 +2,28 @@ import axios from "@/utils/axios";
 import { addjob, addstudent,removestudent,addjobs,addinternships,iserror,removeerror ,addsingleinternships, addinternship } from "../Reducers/StudentReducer";
 import { toast } from "react-toastify";
 
-export const asynccurrentstudent = () => async(dispatch,getstate) =>{
+// export const asynccurrentstudent = () => async(dispatch,getstate) =>{
+//     try {
+//         const { data } = await axios.post("/student")
+//         dispatch(addstudent(data.student))
+//     } catch (error) {
+//         dispatch(iserror(error.response.data.message))
+//     }
+// }
+
+export const asynccurrentstudent = () => async (dispatch, getState) => {
     try {
-        const { data } = await axios.post("/student")
-       dispatch(addstudent(data.student))
+        const { data } = await axios.post(
+            "/student",
+            {},
+            { withCredentials: true }  // ✅ Required to send cookies
+        );
+
+        dispatch(addstudent(data.student));
     } catch (error) {
-        dispatch(iserror(error.response.data.message))
+        dispatch(iserror(error.response?.data?.message || "An error occurred"));
     }
-}
+};
 
 
 export const asyncsignupstudent = (student) => async(dispatch,getstate) =>{
